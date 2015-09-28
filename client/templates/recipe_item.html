@@ -1,6 +1,11 @@
 <template name="recipeItem">
   <li class="list-group-item">
-    <h4 class="list-group-item-heading">{{title}}</h4>
-    {{> ingredientsList}}
+    <h4 class="recipe-item-title list-group-item-heading">{{title}}</h4>
+    <a class="recipe-item-delete btn btn-danger btn-xs">
+      <i class="fa fa-trash-o"></i>
+    </a>
+    <div class="ingredients-list-wrap">
+      {{> ingredientsList}}
+    </div>
   </li>
 </template>

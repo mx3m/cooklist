@@ -6,6 +6,9 @@ Meteor.methods({
       userId: userId
     });
   },
+  deleteRecipe: function (recipeId) {
+    Recipes.remove(recipeId);
+  },
   addIngredient: function (title, recipeId) {
     Ingredients.insert({
       title: title,

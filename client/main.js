@@ -34,6 +34,17 @@ Template.recipeNew.events({
   }
 });
 
+Template.recipeItem.events({
+  'click .recipe-item-delete': function () {
+    var confirmation = confirm("Are you sure? This action is permanent!");
+    if (confirmation)
+      Meteor.call('deleteRecipe', this._id);
+  },
+  'click .list-group-item': function (e) {
+    $(e.target).toggleClass('is-toggled');
+  }
+});
+
 Template.ingredientNew.events({
   'submit .add-new-ingredient': function (e) {
     e.preventDefault();

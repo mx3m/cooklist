@@ -1,26 +1,76 @@
 /* CSS declarations go here */
-
-.container {
-  max-width: 940px;
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #fafafa;
 }
 
-.site-header {
-  margin: 2rem 0 0;
+a {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 860px;
+}
+
+.container .marketron {
+  padding: 2rem;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+.marketron p {
+  max-width: 520px;
+}
+
+.navbar {
+  border-radius: 0;
 }
 
 .add-new-recipe {
   margin: 1rem 0 2rem;
 }
 
+.recipe-item-title {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.recipe-item-delete {
+  float: right;
+  position: relative;
+  z-index: 2;
+}
+
 .add-new-ingredient {
   margin: 1rem 0 0;
 }
 
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  background-color: #fafafa;
+}
+
+.list-group-item.is-toggled {
+  background-color: #fafafa;
+}
+
+.ingredients-list-wrap {
+  display: none;
+}
+
+.list-group-item.is-toggled .ingredients-list-wrap {
+  display: block;
+}
+
 .ingredients-list {
-  margin: 1rem 0 0;
+  margin: 1rem 0 0 0.75rem;
   padding-left: 1.50rem;
   padding-bottom: 0.50rem;
   list-style-type: none;
+  border-left: 3px solid #eee;
 }
 
 .ingredient-item {
@@ -35,8 +85,4 @@
 
 .ingredient-item-actions {
   float: right;
-}
-
-.ingredient-item-delete {
-  cursor: pointer;
 }
