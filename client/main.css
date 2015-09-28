@@ -30,6 +30,11 @@ a {
   margin: 1rem 0 2rem;
 }
 
+.add-new-recipe .form-control {
+  height: auto;
+  font-size: 18px;
+}
+
 .recipe-item-title {
   display: inline-block;
   margin-bottom: 0;
