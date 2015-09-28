@@ -1,0 +1,42 @@
+/* CSS declarations go here */
+
+.container {
+  max-width: 940px;
+}
+
+.site-header {
+  margin: 2rem 0 0;
+}
+
+.add-new-recipe {
+  margin: 1rem 0 2rem;
+}
+
+.add-new-ingredient {
+  margin: 1rem 0 0;
+}
+
+.ingredients-list {
+  margin: 1rem 0 0;
+  padding-left: 1.50rem;
+  padding-bottom: 0.50rem;
+  list-style-type: none;
+}
+
+.ingredient-item {
+  padding: 1rem 0.50rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.ingredient-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.ingredient-item-actions {
+  float: right;
+}
+
+.ingredient-item-delete {
+  cursor: pointer;
+}

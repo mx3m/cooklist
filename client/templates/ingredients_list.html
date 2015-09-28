@@ -1,0 +1,8 @@
+<template name="ingredientsList">
+  {{> ingredientNew}}
+  <ul class="ingredients-list">
+    {{#each ingredients}}
+      {{> ingredientItem}}
+    {{/each}}
+  </ul>
+</template>

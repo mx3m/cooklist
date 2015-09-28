@@ -1,5 +1,6 @@
 <head>
   <title>cooklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -17,34 +18,24 @@
             <a class="navbar-brand" href="#">Cooklist</a>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
-            <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+            <ul class="nav navbar-nav navbar-right">
+              {{> loginButtons}}
+            </ul>
           </div>
         </div>
       </nav>
     </header>
 
-    {{> addNew}}
+    <main>
+      {{#if currentUser}}
+        {{> recipeNew}}
 
-    <ul class="list-group">
-      {{#each recipes}}
-        {{> recipe}}
-      {{/each}}
-    </ul>
+        {{> recipesList}}
+
+      {{else}}
+        {{> marketron}}
+      {{/if}}
+    </main>
 
   </div>
 </body>
-
-<template name="recipe">
-  <li class="list-group-item">{{title}}</li>
-</template>
-
-<template name="addNew">
-  <form class="add-new-recipe">
-    <div class="input-group">
-      <input type="text" name="title" class="form-control" placeholder="Quickly add a new recipe here...">
-      <span class="input-group-btn">
-        <input type="submit" class="btn btn-primary" value="Add">
-      </span>
-    </div><!-- /input-group -->
-  </form>
-</template>
