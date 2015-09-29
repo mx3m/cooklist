@@ -1,9 +1,20 @@
 <template name="recipeItem">
-  <li class="list-group-item">
-    <h4 class="recipe-item-title list-group-item-heading">{{title}}</h4>
-    <a class="recipe-item-delete btn btn-danger btn-xs">
-      <i class="fa fa-trash-o"></i>
-    </a>
+  <li class="recipe-item list-group-item">
+    <h4 class="recipe-item-title list-group-item-heading">
+      <span>{{title}}</span>
+    </h4>
+    <form class="recipe-item-title-edit">
+      <input type="text" class="recipe-edit-input" name="title" value="{{title}}">
+      <input type="submit" class="btn-success" value="Save">
+    </form>
+    <div class="btn-group">
+      <a class="recipe-item-edit btn btn-default btn-sm">
+        <i class="fa fa-pencil"></i>
+      </a>
+      <a class="recipe-item-delete btn btn-default btn-sm">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </div>
     <div class="ingredients-list-wrap">
       {{> ingredientsList}}
     </div>

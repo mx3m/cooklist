@@ -27,7 +27,11 @@ Template.recipeNew.events({
     var title = $(e.target).find('[name=title]').val();
     var userId = Meteor.user()._id;
 
+    console.log("recipes to be added");
+
     Meteor.call('addRecipe', title, userId);
+
+    console.log("recipes correctly added to the db");
 
     // Clear form
     $(e.target).find('[name=title]').val("");
@@ -40,8 +44,20 @@ Template.recipeItem.events({
     if (confirmation)
       Meteor.call('deleteRecipe', this._id);
   },
+  'click .recipe-item-edit': function (e) {
+    $(e.target).parents('.list-group-item').toggleClass('is-edited');
+  },
   'click .list-group-item': function (e) {
     $(e.target).toggleClass('is-toggled');
+    e.stopPropagation();
+  },
+  'submit .recipe-item-title-edit': function(e) {
+    e.preventDefault();
+    var title = $(e.target).find('[name=title]').val();
+
+    Meteor.call('editRecipe', this._id, title);
+
+    $(e.target).parents('.list-group-item').toggleClass('is-edited');
   }
 });
 

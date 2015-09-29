@@ -35,19 +35,53 @@ a {
   font-size: 18px;
 }
 
-.recipe-item-title {
+.recipe-item.is-edited .recipe-item-title-edit {
   display: inline-block;
-  margin-bottom: 0;
 }
 
-.recipe-item-delete {
+.recipe-item.is-edited .recipe-item-title {
+  display: none;
+}
+
+.recipe-item .btn-group {
+  display: inline-block;
   float: right;
-  position: relative;
-  z-index: 2;
+}
+
+.recipe-item-title {
+  display: inline-block;
+  line-height: 30px;
+  margin-bottom: 0;
+  cursor: text;
+}
+
+.recipe-item-title-edit {
+  display: none;
+}
+
+.recipe-edit-input {
+  height: 30px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.recipe-item-title-edit .btn-success {
+  margin-left: 5px;
+  line-height: 24px;
+  border: none;
+  border-radius: 3px;
 }
 
 .add-new-ingredient {
   margin: 1rem 0 0;
+}
+
+.ingredient-quantity-wrap {
+  padding-right: 5px;
+}
+
+.ingredient-title-wrap {
+  padding-left: 5px;
 }
 
 .list-group-item {
@@ -71,21 +105,31 @@ a {
 }
 
 .ingredients-list {
-  margin: 1rem 0 0 0.75rem;
+  margin: 0 0 0 0.75rem;
   padding-left: 1.50rem;
   padding-bottom: 0.50rem;
   list-style-type: none;
-  border-left: 3px solid #eee;
+  border-left: 1px dotted #ddd;
+  cursor: default;
 }
 
 .ingredient-item {
   padding: 1rem 0.50rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px dotted #ddd;
+  cursor: default;
+}
+
+.ingredient-item:first-child {
+  margin-top: 1rem;
 }
 
 .ingredient-item:last-child {
   padding-bottom: 0;
   border-bottom: none;
+}
+
+.ingredient-item span {
+  font-style: italic;
 }
 
 .ingredient-item-actions {
